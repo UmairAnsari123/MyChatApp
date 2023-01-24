@@ -1,50 +1,17 @@
 import React from 'react';
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-import Routes from './routes';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
-export default function Providers() {
-  return (
-      <PaperProvider theme={theme}>
-        <Routes />
-      </PaperProvider>
-  );
-}
-
-const theme = {
-  ...DefaultTheme,
-  roundness: 2,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: '#5b3a70',
-    accent: '#50c878',
-    background: '#f7f9fb',
-  },
-};
-
-import React from 'react';
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
-
-import { AuthProvider } from './authProvider';
-import Routes from './routes';
-
-export default function Providers() {
-  return (
-      <PaperProvider theme={theme}>
-        <AuthProvider>
-          <Routes />
-        </AuthProvider>
-      </PaperProvider>
-  );
-}
-
-const theme = {
-  ...DefaultTheme,
-  roundness: 2,
-  colors: {
-    ...DefaultTheme.colors,
-    primary: '#5b3a70',
-    accent: '#50c878',
-    background: '#f7f9fb',
-  },
-};
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
